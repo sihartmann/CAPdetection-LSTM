@@ -4,7 +4,7 @@ The GUI can be started by opening the *CAP_app_v1.mlapp* file in MATLAB and clic
 
 Following window will appear:
 
-[GUI design](docs/figures/CAP_app_interface.PNG)
+![GUI design](docs/figures/CAP_app_interface.PNG)
 
 ## Selecting folder or files for analysis
 
@@ -33,38 +33,39 @@ The interface allows to select up two three different scoring outputs.
 
 The option “Create excel spreadsheet” will create a Microsoft Excel worksheet that contains all the CAP measures for each selected recording. Following table lists all computed CAP measures and their meaning.
 
-Variables	Description
-ID	subject's ID
-SLDUR	total duration of NREM sleep in seconds
-NRAPH	total number of A-phases
-APHDUR	total duration of A-phases in seconds
-AVGAPHDUR	average duration of A-phases in seconds
-NRAPHPH	number of A-phases per hour of NREM sleep
-RAPHSL	total duration of A-phases/total duration of NREM sleep
-NRA1	total number of A1-phases
-NRA2	total number of A2-phases
-NRA3	total number of A3-phases
-A1DUR	total duration of A1-phases in seconds
-A2DUR	total duration of A2-phases in seconds
-A3DUR	total duration of A3-phases in seconds
-AVGA1DUR	average duration of A1-phases in seconds
-AVGA2DUR	average duration of A2-phases in seconds
-AVGA3DUR	average duration of A3-phases in seconds
-RA1APH	total number of A1-phases/total number of A-phases
-RA2APH	total number of A2-phases/total number of A-phases
-RA3APH	total number of A3-phases/total number of A-phases
-RA1NRE	total duration of A1-phases/total duration of NREM sleep
-RA2NRE	total duration of A2-phases/total duration of NREM sleep
-RA3NRE	total duration of A3-phases/total duration of NREM sleep
-A1IND	A1 index (number of A1-phases per hour)
-A2IND	A2 index (number of A2-phases per hour)
-A3IND	A3 index (number of A3-phases per hour)
-NRCAP	total number of CAP sequences
-CAPDUR	total duration of CAP sequences in seconds
-RCAPSL	CAP rate (percentage of NREM sleep occupied by CAP)
-AVGCAPDUR	average duration of CAP sequences in seconds
-AVGCYCLEDUR	average duration of CAP cycles in seconds
-AVGBPHADUR	average duration of B-phases in seconds
+| Variables  | Description |
+| ------------- | ------------- |
+| ID  | subject's ID  |
+| SLDUR  | total duration of NREM sleep in seconds  |
+| NRAPH  | total number of A-phases  |
+| APHDUR  | total duration of A-phases in seconds  |
+| AVGAPHDUR  | average duration of A-phases in seconds  |
+| NRAPHPH  | number of A-phases per hour of NREM sleep  |
+| RAPHSL  | total duration of A-phases/total duration of NREM sleep  |
+| NRA1  | total number of A1-phases  |
+| NRA2  | total number of A2-phases  |
+| NRA3  | total number of A3-phases  |
+| A1DUR  | total duration of A1-phases in seconds  |
+| A2DUR  | total duration of A2-phases in seconds  |
+| A3DUR  | total duration of A3-phases in seconds  |
+| AVGA1DUR  | average duration of A1-phases in seconds  |
+| AVGA2DUR  | average duration of A2-phases in seconds  |
+| AVGA3DUR  | average duration of A3-phases in seconds  |
+| RA1APH  | total number of A1-phases/total number of A-phases  |
+| RA2APH  | total number of A2-phases/total number of A-phases  |
+| RA3APH  | total number of A3-phases/total number of A-phases  |
+| RA1NRE  | total duration of A1-phases/total duration of NREM sleep  |
+| RA2NRE  | total duration of A2-phases/total duration of NREM sleep  |
+| RA3NRE  | total duration of A3-phases/total duration of NREM sleep  |
+| A1IND  | A1 index (number of A1-phases per hour)  |
+| A2IND  | A2 index (number of A2-phases per hour)  |
+| A3IND  | A3 index (number of A3-phases per hour)  |
+| NRCAP  | total number of CAP sequences  |
+| CAPDUR  | total duration of CAP sequences in seconds  |
+| RCAPSL  | CAP rate (percentage of NREM sleep occupied by CAP)  |
+| AVGCAPDUR  | average duration of CAP sequences in seconds  |
+| AVGCYCLEDUR  | average duration of CAP cycles in seconds  |
+| AVGBPHADUR  | average duration of B-phases in seconds  |
 
 ### Plots
 
