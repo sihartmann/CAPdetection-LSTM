@@ -1,0 +1,71 @@
+function [ ] = createScoringPlot_Hypnogram(eeg,prediction)
+
+start = 0;
+stop = length(eeg.eeg)/eeg.fs;
+% Get duration and set XTick frequency
+x_duration = stop - start;
+xtick_freq = 3600;
+
+% Calculate time axis for the plot
+time_axis = linspace(start, stop, x_duration);
+%% Plot sleep staging
+for i = 1 : length(eeg.event)
+    sleep_stages((i-1)*30+1:i*30) = eeg.event(i);
+end
+sleep_stages(sleep_stages == 0) = -1;
+sleep_stages(sleep_stages == 5) = 0;
+sleep_stages(sleep_stages > 5) = -2;
+sleep_stages = abs(sleep_stages - 4);
+sleep_stages(sleep_stages > 5) = [];
+if(sleep_stages > time_axis)
+    sleep_stages = sleep_stages(1:length(time_axis));
+else
+    sleep_stages = sleep_stages(1:length(time_axis));
+end
+% Calculate time axis for the plot
+l(1) = plot(time_axis,sleep_stages,'LineWidth',1,'Color','k');  
+% Set axes limits of current plot            
+xlim([start stop]);
+% Set X- and Y-Lable of current plot
+xlabel('Time','FontSize',14);
+ylabel('Sleep Stages','FontSize',11);
+% Calculate and set XTicks of current subplot (show actual time of
+% the measurement
+xticks = start:xtick_freq:(start+x_duration);
+t1 = datetime(datestr(eeg.starttime/86400, 'HH:MM:SS'),'InputFormat','HH:mm:ss');
+t2 = t1 + seconds(start);
+t3 = t2 + seconds(x_duration);
+xticklabels = t2:seconds(xtick_freq):t3;
+xticklabels.Format = 'HH:mm:ss';
+xticklabels = cellstr(xticklabels);
+set(gca,'XTick',xticks)
+set(gca,'XTickLabel',xticklabels,'FontSize',11);
+yticks = 0:1:6;
+yticklabels = {'N4','N3','N2','N1','REM','W','M'};
+set(gca,'YTick',yticks)
+set(gca,'YLim',[0.9,6.1])
+set(gca,'YTickLabel',yticklabels,'FontSize',11);
+
+
+% Plot CAP and sleep stage events into the plotted data
+pred_tmp = prediction;
+diff_pred = diff(pred_tmp>0);
+pred_start = find(diff_pred == 1)+1;
+classes = prediction(pred_start);
+A1_start = pred_start(classes == 1);
+y_min = sleep_stages(A1_start)-0.25;
+y_max = sleep_stages(A1_start)+0.25;
+line([A1_start; A1_start], [y_min; y_max] ,'Color','r','LineStyle','-');
+A2_start = pred_start(classes == 2);
+y_min = sleep_stages(A2_start)-0.25;
+y_max = sleep_stages(A2_start)+0.25;
+line([A2_start; A2_start], [y_min; y_max] ,'Color','g','LineStyle','-');
+A3_start = pred_start(classes == 3);
+y_min = sleep_stages(A3_start)-0.25;
+y_max = sleep_stages(A3_start)+0.25;
+line([A3_start; A3_start], [y_min; y_max] ,'Color','b','LineStyle','-');
+l(2)=plot([NaN,NaN], 'color', 'r');
+l(3)=plot([NaN,NaN], 'color', 'g');
+l(4)=plot([NaN,NaN], 'color', 'b');
+legend(l,{'Stages','A1','A2','A3'});
+
