@@ -1,6 +1,6 @@
 %% Initialization
 % Set path to sleep recordings
-file_path = 'D:\Miano CAP PSG\';
+file_path = 'C:\path\to\folder\with\eegfiles\';
 % Select files
 % Individually
 % [file_list, file_path]=uigetfile({'*.edf';'*.rec'}, 'File Selector','MultiSelect', 'on');
