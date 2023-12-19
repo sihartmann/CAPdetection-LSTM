@@ -2,7 +2,7 @@
 
 Sytem to detect CAP A phases and to classify the respective subtypes from sleep EEG recordings
 
-More information can be found [here](https://10.1109/TNSRE.2019.2934828).
+More information can be found [here](https://doi.org/10.1109/TNSRE.2019.2934828).
 
 ## Application information
 *	Version: MATLAB® R2019b
