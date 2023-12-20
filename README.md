@@ -69,7 +69,7 @@ This system does not guarantee a perfect scoring result. Please check some score
 
 ## Please cite
 
-S. Hartmann and M. Baumert, “Automatic A-phase detection of cyclic alternating patterns in sleep using dynamic temporal information,” IEEE Trans. Neural Syst. Rehabil. Eng., vol. 27, no. 9, pp. 1695–1703, Sep. 2019, [link](https://10.1109/TNSRE.2019.2934828)
+S. Hartmann and M. Baumert, “Automatic A-phase detection of cyclic alternating patterns in sleep using dynamic temporal information,” IEEE Trans. Neural Syst. Rehabil. Eng., vol. 27, no. 9, pp. 1695–1703, Sep. 2019, [link](https://doi.org/10.1109/TNSRE.2019.2934828)
 
 S. Hartmann and M. Baumert, “Subject-level Normalization to Improve A-phase Detection of Cyclic Alternating Pattern in Sleep EEG,” in 2023 45th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC), 2023.
 
