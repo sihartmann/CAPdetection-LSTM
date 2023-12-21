@@ -55,7 +55,7 @@ if flags.Excel
     if ~exist(strcat(eeg.path,'Statistics\',get_datetime,'\'),'dir')
         mkdir(strcat(eeg.path,'Statistics\',get_datetime,'\'));
     end
-    varNames = {'ID','SLDUR','NRAPH','APHDUR','AVGAPHDUR','NRAPHPH','RAPHSL','NRA1','NRA2','NRA3','A1DUR','A2DUR','A3DUR','AVGA1DUR','AVGA2DUR','AVGA3DUR','RA1APH','RA2APH','RA3APH','RA1NRE','RA2NRE','RA3NRE','A1IND','A2IND','A3IND','NRCAP','CAPDUR','RCAPSL'};
+    varNames = {'ID','SLDUR','NRAPH','APHDUR','AVGAPHDUR','NRAPHPH','RAPHSL','NRA1','NRA2','NRA3','A1DUR','A2DUR','A3DUR','AVGA1DUR','AVGA2DUR','AVGA3DUR','RA1APH','RA2APH','RA3APH','RA1NRE','RA2NRE','RA3NRE','A1IND','A2IND','A3IND','NRCAP','CAPDUR','RCAPSL','AVGCAPDUR','AVGCYCLEDUR','AVGBPHADUR'};
     if n > 1
         excel_name = ['CAP_analysis',num2str(length(file_list)-2),'_',get_datetime,'.xlsx'];
         full_name = strcat(eeg.path,'Statistics\',get_datetime,'\',excel_name);
@@ -98,7 +98,10 @@ if flags.Excel
                             "A3 index (number of A3-phases per hour)";...
                             "total number of CAP sequences";...
                             "total duration of CAP sequences in seconds";...
-                            "CAP rate (percentage of NREM sleep occupied by CAP)"];
+                            "CAP rate (percentage of NREM sleep occupied by CAP)";...
+                            "average duration of CAP sequences in seconds";...
+                            "average duration of CAP cycles in seconds";...
+                            "average duration of B-phases in seconds"];
         infoTable = table(varNames',varDescription,'VariableNames',varNames2);
         writetable(infoTable,full_name,'Sheet',2);
     end
