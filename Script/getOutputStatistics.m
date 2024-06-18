@@ -44,12 +44,14 @@ if ~isempty(A1_stop)
     stats{14} = stats{11}/stats{8};
     stats{17} = stats{8}/stats{3};
     stats{20} = stats{11}/stats{2};
+    stats{23} = stats{8}/stats{2}*3600;
 else
     stats{8} = 0;
     stats{11} = 0;
     stats{14} = 0;  
     stats{17} = 0;
     stats{20} = 0;
+    stats{23} = 0;
 end
 
 
@@ -68,12 +70,14 @@ if ~isempty(A2_stop) && ~isempty(A2_start)
     stats{15} = stats{12}/stats{9};
     stats{18} = stats{9}/stats{3};
     stats{21} = stats{12}/stats{2};
+    stats{24} = stats{9}/stats{2}*3600;
 else
     stats{9} = 0;
     stats{12} = 0;
     stats{15} = 0;  
     stats{18} = 0;
     stats{21} = 0;
+    stats{24} = 0;
 end
 
 pred_3 = rec_pred==3;
@@ -91,16 +95,18 @@ if ~isempty(A3_stop)
     stats{16} = stats{13}/stats{10};
     stats{19} = stats{10}/stats{3};
     stats{22} = stats{13}/stats{2};
+    stats{25} = stats{10}/stats{2}*3600;
 else
     stats{10} = 0;
     stats{13} = 0;
     stats{16} = 0;  
     stats{19} = 0;
     stats{22} = 0;
+    stats{25} = stats{8}/stats{2}*3600;
 end
 
 if ~isempty(CAP_start)
-    stats{23} = length(CAP_start);
+    stats{26} = length(CAP_start);
     CAP_duration = 0;
     B_phase_duration = [];
     CAP_cycle_duration = [];
@@ -118,16 +124,16 @@ if ~isempty(CAP_start)
         CAP_cycle_duration = [CAP_cycle_duration diff(CAP_A_start1)];
         B_phase_duration = [B_phase_duration CAP_A_start2 - CAP_A_stop]; 
     end
-    stats{24} = CAP_duration;
-    stats{25} = stats{24}/stats{2};
-    stats{26} = stats{24}/stats{23};
-    stats{27} = mean(CAP_cycle_duration);
-    stats{28} = mean(B_phase_duration);
+    stats{27} = CAP_duration;
+    stats{28} = stats{27}/stats{2}*100;
+    stats{29} = stats{27}/stats{26};
+    stats{30} = mean(CAP_cycle_duration);
+    stats{31} = mean(B_phase_duration);
 else
-    stats{23} = 0;
-    stats{24} = 0;
-    stats{25} = 0;   
-    stats{26} = 0; 
+    stats{26} = 0;
     stats{27} = 0;
-    stats{28} = 0;
+    stats{28} = 0;   
+    stats{29} = 0; 
+    stats{30} = 0;
+    stats{31} = 0;
 end
