@@ -5,7 +5,8 @@ Sytem to detect CAP A phases and to classify the respective subtypes from sleep 
 More information can be found [here](https://doi.org/10.1109/TNSRE.2019.2934828).
 
 ## Application information
-*	Version: MATLAB® R2019b
+*	Version: MATLAB® R2021b
+* Signal Processing Toolbox, Wavelet Toolbox, and Machine Learning Toolbox
 *	Required EEG file types: .mat, .edf or .rec
 *	Required annotation file types: .txt, .xml, .xlsx, or .evt
 *	Required EEG channels: C4-A1 and/or C3-A2
@@ -72,4 +73,3 @@ This system does not guarantee a perfect scoring result. Please check some score
 S. Hartmann and M. Baumert, “Automatic A-phase detection of cyclic alternating patterns in sleep using dynamic temporal information,” IEEE Trans. Neural Syst. Rehabil. Eng., vol. 27, no. 9, pp. 1695–1703, Sep. 2019, [link](https://doi.org/10.1109/TNSRE.2019.2934828)
 
 S. Hartmann and M. Baumert, “Subject-level Normalization to Improve A-phase Detection of Cyclic Alternating Pattern in Sleep EEG,” in 2023 45th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC), 2023.
-
